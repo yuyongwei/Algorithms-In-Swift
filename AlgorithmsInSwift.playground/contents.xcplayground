@@ -3,5 +3,6 @@
     <pages>
         <page name='Union and Find'/>
         <page name='Binary Search'/>
+        <page name='LinkedList'/>
     </pages>
 </playground>
