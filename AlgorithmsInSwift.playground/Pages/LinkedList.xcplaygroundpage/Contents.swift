@@ -59,8 +59,7 @@ list_int.isEmpty()
 
 public class LinkedQueue <T: Equatable> {
     
-    private var first: Node<T>?
-    private var last: Node<T>?
+    private var first, last: Node<T>?
     
     public func isEmpty() -> Bool {
         return first?.item == nil
