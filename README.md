@@ -4,4 +4,16 @@
 ##Progress:
 * Binary Search --Done
 * Union and Find --Done
-* LinkedList -- queue Doing, stack Done.
+* LinkedList -- queue Done, stack Done.
+* Mergesort -- doing.
+* Quicksort
+* Priority Queues
+* Symbol Tables
+* Balanced Search Trees
+* Hash Table
+* Undirected Graphs
+* Directed Graphs
+* Minimum Spanning Trees
+* Dijkstra's shortest paths
+* String sorts
+* Tries
