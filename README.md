@@ -5,6 +5,7 @@
 * Binary Search --Done
 * Union and Find --Done
 * LinkedList -- queue Done, stack Done.
+* Elementary Sorts: Selection Sort, Insertion Sort, ShellSort -- Done.
 * Mergesort -- doing.
 * Quicksort
 * Priority Queues
