@@ -122,3 +122,79 @@ arrayOfString_ss
 let a = Point2D(x: 1, y: 2)
 
 
+
+
+
+public class MergeSort<T: Comparable> {
+    
+    private class func merge (inout a:[T], inout aux:[T], lo: Int, mid:Int, hi: Int) {
+        var i = lo, j = mid+1
+        
+        for var k = lo; k <= hi; k++ {
+            aux[k] = a[k]
+        }
+        
+        for var k = lo; k <= hi; k++ {
+            if i > mid {
+                a[k] = aux[j++]
+            } else if j > hi {
+                a[k] = aux[i++]
+            } else if aux[j] < aux[i] {
+                a[k] = aux[j++]
+            } else {
+                a[k] = aux[i++]
+            }
+        }
+    }
+    
+    private class func sort (inout a:[T], inout aux:[T], lo: Int, hi: Int) {
+        if hi <= lo {
+            return
+        }
+        let mid = lo + (hi - lo) / 2
+        sort(&a, aux: &aux, lo: lo, hi: mid)
+        sort(&a, aux: &aux, lo: mid+1, hi: hi)
+        
+        //already sorted, so return
+        if !(a[mid+1] < a[mid]) {
+            return
+        }
+        merge(&a, aux: &aux, lo: lo, mid: mid, hi: hi)
+    }
+    
+    public class func sort (inout a:[T]) {
+        var aux = [T]()
+        aux.appendContentsOf(a)
+        sort(&a, aux: &aux, lo: 0, hi: a.count - 1)
+    }
+    
+    //bottom-up mergesort, no recursive
+    public class func sortBU (inout a:[T]) {
+        let N = a.count
+        var aux = [T]()
+        aux.appendContentsOf(a)
+        for var sz = 1; sz < N; sz = sz + sz {
+            for var lo = 0; lo < N - sz; lo += sz + sz {
+                merge(&a, aux: &aux, lo: lo, mid: lo+sz-1, hi: min(lo+sz+sz-1, N-1))
+            }
+        }
+    }
+    
+}
+
+
+var arrayOfInt_mergeSort = [3,5,7,1,0,100,234,156,31]
+MergeSort.sortBU(&arrayOfInt_mergeSort)
+arrayOfInt_mergeSort
+
+var arrayOfString_mergeSort = ["s","o","r","t","e","x","a","m","p","l","e"]
+MergeSort.sort(&arrayOfString_mergeSort)
+arrayOfString_mergeSort
+
+
+
+
+
+
+
+
