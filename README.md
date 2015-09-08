@@ -6,8 +6,8 @@
 * Union and Find --Done
 * LinkedList -- queue Done, stack Done.
 * Elementary Sorts: Selection Sort, Insertion Sort, ShellSort -- Done.
-* Mergesort -- doing.
-* Quicksort
+* Mergesort -- Done.
+* Quicksort -- Doing.
 * Priority Queues
 * Symbol Tables
 * Balanced Search Trees
